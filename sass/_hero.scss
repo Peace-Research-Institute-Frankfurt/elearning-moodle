@@ -173,12 +173,13 @@
   margin: 0 auto;
   pointer-events: none;
   --ratio: 0.5625;
-  padding: var(--padding);
+  padding: 0 var(--padding);
   background-color: var(--color-blue-dark);
   @include bp(m) {
     background: transparent;
   }
   &.active {
+    padding: var(--padding);
     pointer-events: all;
     max-height: calc(var(--ratio) * 100vw + var(--padding) * 1);
     display: block;
