@@ -1,0 +1,138 @@
+{{!
+    @template theme_hsfk/home
+}}
+
+{{> theme_hsfk/head}}
+
+<body lang="en-US">
+  {{{ output.standard_top_of_body_html }}}
+  <div id="wrapper">
+
+    {{> theme_hsfk/header}}
+
+    <header class="hero__container">
+      <div id="hero-video-container" class="hero__video active">
+        <div class="iframe-container">
+          <iframe src="https://start.video-stream-hosting.de/player.html?serverapp=hsfk2-vod&streamname=trailer.smil&nocookie=1&bgimage={{{ hero_image }}}" width="100%" height="100%" referrerpolicy="strict-origin" allowfullscreen="allowfullscreen"></iframe>
+          <button class="hero__video__close" id="hero-video-close">
+            Close
+            <i class="fa fa-times fa-3x" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="hero__main">
+        <img src="{{{ hero_image }}}" alt="" class="hero__image" />
+        <div class="hero__inner">
+          <div class="hero__copy">
+            <h1 class="hero__title">
+              <span class="hero__eyebrow">Welcome to the</span>
+              EU Non-Proliferation<br>and Disarmament
+              <span class="hero__eyebrow">eLearning Course!</span>
+            </h1>
+            <p class="hero__intro">
+              This course aims to cover all aspects of the European Union's non-proliferation and disarmament agenda and provide a comprehensive knowledge resource. Both the course and the certification are offered free of charge. Watch the trailer for a quick overview or jump right in!
+            </p>
+          </div>
+
+          <div class="hero__video-teaser">
+            <button class="btn btn-primary" id="hero-video-show">
+              <i class="fa fa-play" aria-hidden="true"></i>Watch the trailer
+            </button>
+          </div>
+
+          <ul class="hero__facts">
+            {{#hero_features}}
+              <li class="hero__fact">
+                <h2>{{{ title }}}</h2>
+                <p>{{{ body  }}}</p>
+              </li>
+            {{/hero_features}}
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="home__courses home__section">
+        <h2 class="section__title">Learning Units</h2>
+        {{{ output.main_content }}}
+        {{{ output.course_content_footer }}}
+      </div>
+      <section class="home__certificates home__section">
+        <div class="certificates__inner">
+
+          <h2 class="section__title">Certificates</h2>
+          <div class="certificates__copy">
+            <p class="large">Test your knowledge and receive the <strong>Basic Certificate</strong> for completing the first five, and the <strong>Comprehensive Certificate</strong> for completing all 20 learning units.</p>
+            <p class="faded">All learning unit content is accessible without registration, but a free account is required to access the certificate section. If you don't have an account, you can <a href="https://nonproliferation-elearning.eu/login/signup.php">register here</a>. Terms apply.</p>
+          </div>
+          <div class="certificates__form">
+            {{^show_login_form}}
+              <p>You are logged in as <strong>{{{user.firstname}}} {{{user.lastname}}}</strong> – <a href="/login/logout.php?sesskey={{{user.sesskey}}}">Logout</a></p>
+              <p><a class="btn btn-primary btn-large" href="/certificate">Continue to certificate section</a></p>
+            {{/show_login_form}}
+
+            {{#show_login_form}}
+              {{{ login_form }}}
+            {{/show_login_form}}
+
+            <p class="signuplink">First time here? <a href="https://nonproliferation-elearning.eu/login/signup.php">Create a new account</a>.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="home__contributors home__section">
+        <h2 class="section__title">Contributors</h2>
+        <ul class="contributors">
+          {{#contributors}}
+            <li class="contributors__item">
+              <button class="contributors__card" data-toggle="modal" data-target="#{{{ id }}}">
+                <div class="contributors__image">
+                  <img loading="lazy" src="{{{ image }}}" alt="">
+                </div>
+                <div class="contributors__copy">
+                  <h3>{{{ name }}}</h3>
+                </div>
+              </button>
+              <div class="modal fade" id="{{{ id }}}">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h3 class="modal-title">{{{ name }}}</h3>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fa fa-times fa-1x" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>{{{ bio }}}</p>
+                      {{#in_courses}}
+                        {{#multiple_courses}}
+                          <h4>Learning Units</h4>
+                        {{/multiple_courses}}
+                        {{^multiple_courses}}
+                          <h4>Learning Unit</h4>
+                        {{/multiple_courses}}
+                      {{/in_courses}}
+                      {{#in_courses}}
+                        {{{ fullname }}}
+                      {{/in_courses}}
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{/contributors}}
+        </ul>
+      </section>
+    </main>
+
+    {{> theme_hsfk/footer}}
+    {{{ output.standard_after_main_region_html }}}
+  </div>
+</body>
+
+</html>

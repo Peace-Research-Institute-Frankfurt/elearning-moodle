@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("/theme/hsfk/fonts/roboto_flex_subset.woff2") format("woff2");
+  font-display: swap;
+}
+
+// @font-face {
+//   font-family: "Roboto";
+//   src: url([[font:theme|roboto_flex_subset.woff2]]) format("woff2"), url([[font:theme|roboto_flex_subset.woff]]) format("woff");
+//   font-display: swap;
+// }
+
+@mixin bp($point) {
+  @if $point==xl {
+    @media (min-width: 2000px) {
+      @content;
+    }
+  } @else if $point==l {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point==ml {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  } @else if $point==m {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==s {
+    @media (min-width: 500px) {
+      @content;
+    }
+  }
+}
+:root {
+  --color-black: #03090e;
+  --color-blue-dark-shadow: #1b43604d;
+  --color-blue-dark: #0d425b;
+  --color-blue-medium: #426b7e;
+  --color-blue-light: #7996a5;
+  --color-blue-light-2: #afc0c8;
+  --color-blue-light-3: #ced9de;
+  --color-blue-light-4: #e8eef0;
+  --color-blue-light-5: #f3f6f7;
+  --color-gray-light: #d5d4d5;
+  --color-gray: #555555;
+  --color-gray-dark: #424242;
+  --color-accent-yellow: #fbc202;
+  --color-accent-green: #b8cc05;
+  --color-accent-berry: #902c42;
+  --color-accent-berry-light: #cb2566;
+  --ms--1: 0.75rem;
+  --ms-0: 0.95rem;
+  --ms-1: 1.2rem;
+  --ms-2: 1.8rem;
+  --ms-3: 2.25rem;
+  --fast: 140ms;
+  --br: 4px;
+  --padding: 1.5rem;
+  @include bp(m) {
+    --ms-1: 1.3rem;
+    --ms-2: 2.25rem;
+    --ms-3: 2.75rem;
+    --padding: 1.75rem;
+  }
+  @include bp(l) {
+    --padding: 2rem;
+  }
+}
+
+%card {
+  background: white;
+  border-radius: var(--br);
+  box-shadow: 0 1px 4px -1px rgba(rgb(32, 38, 56), 0.2);
+}
+
+%h1 {
+  font-size: var(--ms-3);
+  letter-spacing: -0.005em;
+}
+
+%h2 {
+  font-size: var(--ms-2);
+  letter-spacing: -0.005em;
+}
+%h3 {
+  font-size: var(--ms-1);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+%h4 {
+  font-size: var(--ms-0);
+  font-weight: 700;
+}
+
+%copy {
+  font-size: var(--ms-0);
+  hyphens: auto;
+  font-variation-settings: "wdth" 110;
+  letter-spacing: 0.005em;
+  p {
+    margin-bottom: 0.5em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & > ul {
+    padding-left: 1.1em;
+    margin-bottom: 0.5em;
+  }
+}
+%caption {
+  font-size: var(--ms--1);
+  line-height: 1.4;
+  font-variation-settings: "wdth" 100;
+}
+%copy-large {
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  font-size: var(--ms-1);
+  font-variation-settings: "wdth" 110;
+}
+
+%grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 0 var(--padding);
+  margin: 0 auto;
+  max-width: 1000px;
+  gap: 1.25rem;
+  @include bp(m) {
+    gap: var(--padding);
+  }
+  @include bp(l) {
+    max-width: 1100px;
+  }
+  @include bp(l) {
+    max-width: 1220px;
+  }
+}

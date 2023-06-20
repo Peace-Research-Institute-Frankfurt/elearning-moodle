@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package    theme_academi
  * @copyright  2015 onwards Nephzat Dev Team (http://www.nephzat.com)

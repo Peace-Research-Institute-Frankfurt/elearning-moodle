@@ -1,0 +1,65 @@
+<ol class="courses__list">
+  {{#courses}}
+    <li class="courses__item">
+      {{#show_category}}
+        <span class="courses__category">{{{ category.name }}}</span>
+      {{/show_category}}
+      <div class="courses__image">
+        <img loading="lazy" src="{{{ thumbnail }}}" alt="">
+      </div>
+      <div class="courses__info">
+        <h5>
+          <span class="courses__index">{{{ lu_index }}}</span>
+          <span class="courses__title">{{{ title }}}</span>
+        </h5>
+        <div class="courses__intro">
+          {{#shortentext}}
+            200, {{{ course.summary }}}
+          {{/shortentext}}
+        </div>
+      </div>
+      <div class="courses__actions">
+        <button class="courses__more" data-toggle="modal" data-target="#course-{{{ course.id }}}">More info</button>
+        <a href="{{{ link }}}" target="_blank" class="courses__start">Start</a>
+      </div>
+      <div data-keyboard="true" class="modal fade" id="course-{{{ course.id }}}">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">{{{ course.fullname  }}}</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-times fa-1x" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>{{{ course.summary  }}}</p>
+              {{#multiple_authors}}
+                <h3>Authors</h3>
+              {{/multiple_authors}}
+              {{^multiple_authors}}
+                <h3>Author</h3>
+              {{/multiple_authors}}
+              {{#authors}}
+                <details class="courses__author">
+                  <summary>
+                    <div class="author__image">
+                      <img src="{{{ image }}}" loading="lazy" alt="">
+                      <i class="details-icon fa fa-caret-down fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <span class="author__name">
+                      {{{ name }}}
+                    </span>
+                  </summary>
+                  <p class="author__bio">{{{ bio }}}</p>
+                </details>
+              {{/authors}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a href="{{{ link }}}" target="_blank" class="btn btn-primary">Start Unit</a>
+            </div>
+          </div>
+        </div>
+    </li>
+  {{/courses}}
+</ol>

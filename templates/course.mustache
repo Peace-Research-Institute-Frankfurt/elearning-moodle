@@ -1,0 +1,35 @@
+{{!
+    @template theme_hsfk/course
+}}
+
+{{> theme_hsfk/head}}
+
+<body {{{ output.body_attributes }}}>
+  {{> core/local/toast/wrapper}}
+  <div id="wrapper">
+    {{{ output.standard_top_of_body_html }}}
+
+    {{> theme_hsfk/header}}
+    <article id="page-content" class="container course__content">
+      <header class="course__header">
+        {{#headercontent}}
+          {{> core/activity_header }}
+        {{/headercontent}}
+      </header>
+
+      <main id="region-bs-main-and-pre">
+
+        {{{ output.course_content_header }}}
+        {{{ output.main_content }}}
+        {{{ output.course_content_footer }}}
+
+      </main>
+    </article>
+
+    {{> theme_hsfk/footer}}
+    {{ output.standard_end_of_body_html }}
+
+  </div>
+</body>
+
+</html>

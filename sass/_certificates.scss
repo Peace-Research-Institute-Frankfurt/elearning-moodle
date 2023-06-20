@@ -1,0 +1,94 @@
+.home__certificates {
+  color: white;
+  background: #507588;
+  background-image: linear-gradient(133deg, #4d8a9b, #0f556d);
+  padding-top: 2em;
+  @include bp(m) {
+    padding-top: 5em;
+  }
+  .section__title {
+    grid-column: 1 / 13;
+    color: inherit;
+    margin-bottom: 0 !important;
+  }
+  .certificates__inner {
+    @extend %grid;
+  }
+  a {
+    color: white;
+  }
+  input[type="text"],
+  input[type="password"] {
+    background: rgba(white, 0.2);
+    border: 0;
+    font-family: inherit;
+    border-radius: var(--br);
+    color: white;
+    &::placeholder {
+      color: white;
+      opacity: 0.75;
+    }
+    &:focus {
+      outline: 1px solid white;
+      outline-offset: 2px;
+      box-shadow: none !important;
+    }
+  }
+  label {
+    @extend %copy;
+    margin-bottom: 0.25em;
+  }
+  .btn {
+    border: 0;
+    background: white;
+    color: var(--color-blue-dark);
+    &:hover,
+    &:focus-visible {
+      background: var(--color-accent-yellow);
+    }
+  }
+  .login-form-submit {
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .login-form-forgotpassword {
+    margin-bottom: 0;
+  }
+}
+
+.certificates__copy {
+  @extend %copy;
+  grid-column: 1 / 13;
+  @include bp(m) {
+    grid-column: 1 / 7;
+  }
+  p {
+    margin-bottom: 0.5em;
+  }
+  .large {
+    @extend %copy-large;
+  }
+  .faded {
+    @extend %copy;
+    opacity: 0.75;
+  }
+}
+
+.certificates__form {
+  width: 100%;
+  grid-column: 1 / 13;
+  @include bp(m) {
+    grid-column: 7 / 13;
+  }
+}
+
+.certificates__form .loginbox .loginpanel .desc {
+  margin-top: 0.2em;
+  opacity: 0.75;
+  width: 70%;
+}
+
+.certificates__form .signuplink {
+  opacity: 0.75;
+  max-width: 30em;
+}

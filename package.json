@@ -1,0 +1,43 @@
+{
+  "name": "prif-elearning",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:webpack": "webpack --mode production",
+    "build:sass": "sass ./sass/style.scss:./style/theme.css --no-source-map",
+    "build:postcss": "postcss ./style/theme.css -o ./style/theme.build.css",
+    "watch:sass": "sass ./sass/style.scss:./style/theme.css  --watch --no-source-map",
+    "watch:webpack": "webpack --watch --mode production",
+    "watch:postcss": "postcss ./style/theme.css -o ./style/theme.build.css --watch",
+    "watch:bs": "browser-sync start --proxy https://prif.test --https --watch --files templates layout style lang lib.php config.php",
+    "start": "cross-env NODE_ENV=dev run-p 'watch:*'",
+    "build": "cross-env NODE_ENV=production run-s 'build:*'"
+  },
+  "author": "Max Kohler",
+  "license": "ISC",
+  "homepage": "/",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.62.1",
+    "webpack": "^5.85.1",
+    "webpack-cli": "^5.1.3"
+  },
+  "resolutions": {
+    "socket.io-parser": "^4.2.3",
+    "engine.io": "^6.4.2"
+  },
+  "packageManager": "yarn@3.4.1"
+}

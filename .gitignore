@@ -1,2 +1,16 @@
-/fonts
+fonts/
+
+node_modules/
+style/
+documentation/
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
 *.mp4
+js/build/

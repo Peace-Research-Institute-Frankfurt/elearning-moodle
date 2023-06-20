@@ -1,18 +1,4 @@
-<?php 
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+<?php
 
 /**
  * Strings for component 'theme_hsfk', language 'en'
@@ -21,7 +7,7 @@
  * @copyright 2015 Nephzat Dev Team, nephzat.com
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-	
+
 $string['about'] = 'About';
 $string['aboutus'] = 'About Us';
 $string['address'] = 'Address';
@@ -116,7 +102,7 @@ Privacy Policy|/privacy
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please upload your custom logo here if you want to add it to the header.
                        <br>The image should be 50px high and any reasonable width (minimum:235px) that suits.';
-																							
+
 $string['newcourses'] = 'New courses';
 $string['newsblockcontent'] = 'News & Events Block Content';
 $string['newsblockcontentdesc'] = 'Whatever you add to this textarea will be displayed in the News & Events Block.';
@@ -141,12 +127,6 @@ $string['newseventcontent'] = '<div class="row">
         </div>';
 $string['numberofslides'] = 'Number of slides';
 $string['numberofslides_desc'] = 'Number of slides on the slider.';
-$string['numberoftmonials'] = 'Number of Testimonials';
-$string['numberoftmonials_desc'] = 'Number of Testimonials on the Home Page.';
-$string['phoneno'] = 'Phone No';
-$string['pinurl'] = 'Pinterest';
-$string['pinurl_default'] = 'https://in.pinterest.com/yourpinterestname/';
-$string['pinurldesc'] = 'The Pinterest url of your organisation.';
 $string['pluginname'] = 'hsfk';
 $string['readmore'] = 'Read More';
 $string['region-side-post'] = 'Right';
@@ -198,26 +178,19 @@ $string['slideluname'] = 'LU Name';
 $string['slidelunamedesc'] = 'The name of the Learning Unit';
 $string['slideluurl'] = 'LU URL';
 $string['slideluurldesc'] = 'The URL of the Learning Unit';
-$string['slidedescbgcolor'] = 'Slide Description Background colour';
-$string['slidedescbgcolordesc'] = 'What colour the slide description background should be.';
-$string['slidedesccolor'] = 'Slide Description text colour';
-$string['slidedesccolordesc'] = 'What colour the slide description text should be.';
-$string['slideno'] = 'Slide {$a->slide}';
+$string['slideno'] = 'Contributor {$a->slide}';
 $string['slidenodesc'] = 'Enter the settings for slide {$a->slide}.';
 $string['slidetitle'] = 'Title';
 $string['slidetitledefault'] = 'Title of the Slider - {$a->slideno}';
 $string['slidetitledesc'] = 'Enter the name of the slide\'s image';
 $string['slidevideo'] = 'Video';
 $string['slidevideodesc'] = 'The video should be mp4.';
-$string['slideshowdesc'] = 'Creates a slideshow of up to 36 slides. If no image is selected, the images from pix/home/slide[N].jpg are used. The amount of slides may be reduced (and then increased again) without losing data.';
+$string['slideshowdesc'] = 'Add information about learning unit contributors here. Author data will be displayed on the homepage and in course details. You can change the number of active contributors without losing data.';
 $string['slideshowheading'] = 'Slideshow';
-$string['slideshowheadingsub'] = 'Slideshow for the front page';
-$string['toggleslideshow'] = 'Enable Slideshow?';
-$string['toggleslideshowdesc'] = 'Choose if you wish to hide or show the slide show.';
-$string['twurl'] = 'Twitter';
-$string['twurl_default'] = 'https://twitter.com/yourtwittername';
-$string['twurldesc'] = 'The Twitter url of your organisation.';
-
+$string['slideshowheadingsub'] = 'Contributor Settings';
+$string['toggleslideshow'] = 'Enable contributors?';
+$string['toggleslideshowdesc'] = 'Should contributors be displayed on the front page?';
+$string['phoneno'] = "Phone Number";
 $string['main_feature_1_title'] = 'Feature 1 Title';
 $string['main_feature_1_title_default'] = '17 Learning Units';
 $string['main_feature_1_body'] = 'Feature 1 Body';

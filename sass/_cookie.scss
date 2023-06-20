@@ -1,0 +1,54 @@
+.eupopup-container {
+  z-index: 9999999;
+  background-color: var(--color-accent-yellow);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  display: flex;
+  flex-direction: column;
+  column-gap: 1em;
+  padding: 1em;
+  color: var(--black);
+  .eupopup-button {
+    border: 1px solid black;
+    padding: 0.3em;
+    border-radius: 3px;
+  }
+}
+.eupopup-container > * {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .eupopup-container {
+    flex-direction: row;
+  }
+  .eupopup-container > * {
+    flex-basis: 50%;
+  }
+}
+
+.eupopup-head {
+  display: none;
+}
+
+.eupopup-body {
+  width: auto;
+  display: block;
+  float: none;
+  padding: 0;
+}
+
+.eupopup-body div {
+  text-align: inherit;
+  padding: 0;
+  padding-bottom: 1em;
+}
+
+.eupopup-body a {
+  color: inherit;
+  display: inline-block;
+}

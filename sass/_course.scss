@@ -1,0 +1,143 @@
+.course__content {
+  @extend %copy;
+  background-color: white;
+  padding: var(--padding);
+  margin-top: 2rem;
+  .activity-wrapper.modtype_quiz {
+    border-radius: var(--br);
+  }
+  .activity-item {
+    padding: 0.75em;
+    a {
+      @extend %copy-large;
+      text-decoration: none;
+    }
+    &.activityinline {
+      padding: 0;
+    }
+    .stretched-link {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .activityiconcontainer.assessment {
+    background-color: #393f4b;
+  }
+
+  .btn-primary {
+    background: var(--color-blue-dark);
+  }
+  .collapseall {
+    display: none;
+  }
+  .btn.icons-collapse-expand {
+    background: var(--color-blue-light-4);
+    text-decoration: none;
+    align-self: center;
+  }
+  .modtype_label {
+    margin-bottom: 1em;
+  }
+
+  .sectionname {
+    @extend %h2;
+    margin-top: 0;
+    padding-left: 0.5rem;
+    .tag {
+      border: 1px solid black;
+    }
+  }
+
+  .center {
+    max-width: 50rem;
+  }
+  .simplesearchform {
+    margin-bottom: 1em;
+    form {
+      padding: 0;
+    }
+    @include bp(m) {
+      float: right;
+      margin-bottom: 0;
+    }
+  }
+  .course-search-result {
+    margin-top: var(--padding);
+  }
+  p,
+  ul {
+    margin-bottom: 0.5em;
+    text-align: left !important;
+  }
+
+  ul,
+  ol {
+    padding-left: 0;
+  }
+  .generalbox {
+    li {
+      margin-left: 1em;
+    }
+  }
+  small {
+    display: inline-block;
+    max-width: 60em;
+    @extend %caption;
+  }
+  h3 {
+    @extend %h3;
+    margin-top: 1.5em;
+    margin-bottom: 0.25em;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h4 {
+    @extend %h4;
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    color: var(--color-blue-dark);
+  }
+  .modified {
+    @extend %caption;
+    opacity: 0.75;
+  }
+}
+
+.course__header {
+  h2 {
+    @extend %h2;
+  }
+  .activity-header {
+    display: none;
+  }
+}
+
+.draggable {
+  .activity-item {
+    cursor: grab;
+  }
+}
+
+.path-mod-quiz {
+  .divider.h-75 {
+    display: none;
+  }
+  .que {
+    display: flex;
+    gap: 1rem;
+    .info {
+      @extend %caption;
+      width: 10rem;
+    }
+    .content {
+      margin-left: 0;
+      flex-grow: 1;
+    }
+  }
+}

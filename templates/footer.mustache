@@ -1,0 +1,60 @@
+{{!
+    @template theme_hsfk/footer
+}}
+
+
+<footer class="home__footer">
+  <div class="footer__inner ">
+    <div class="footer__menus">
+
+      <div class="footer__section">
+        <h5>Links</h5>
+        <ul class="footer__menu">
+          <li>
+            <a href="https://www.nonproliferation.eu/">
+              <em>EUNPDC</em>
+              <span>Consortium Homepage</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://prif.org">
+              <em>HSFK/PRIF</em>
+              <span>Lead institution homepage</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://prif.org">
+              <em>Teaching Resources</em>
+              <span>Materials to facilitate non-proliferation and disarmament education in universities</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__section">
+        <h5>Contact</h5>
+        <p>{{{ theme_settings.address }}}</p>
+        <a href="mailto:{{{ theme_settings.email }}}">{{{ theme_settings.email }}}</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__eu">
+      <img src="{{{config.wwwroot}}}/theme/hsfk/pix/flag-eu-outline.svg" alt="Flag of the European Union">
+      <div>
+        <p>Produced by <a href="http://www.prif.org">PRIF</a> with financial assistance from the European Union. The contents of our learning units are the sole responsibility of their respective authors and do not necessarily reflect the position of the European Union.</p>
+      </div>
+    </div>
+
+    <div class="footer__sub">
+      <nav class="footer__submenu">
+        <ul>
+          <li><a href="{{{config.wwwroot}}}/termsofuse">Terms of Use</a></li>
+          <li><a href="{{{config.wwwroot}}}/privacy">Privacy</a></li>
+          <li><a href="{{{config.wwwroot}}}/imprint">Contact</a></li>
+        </ul>
+      </nav>
+      <p>© {{{year}}} – {{{ theme_settings.copyright }}}</p>
+    </div>
+  </div>
+</footer>
