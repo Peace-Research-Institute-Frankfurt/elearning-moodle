@@ -29,7 +29,8 @@
     display: none;
   }
   .post-actions,
-  .link {
+  .link,
+  .subscribelink {
     display: none !important;
   }
   .post-content-container {
@@ -41,10 +42,10 @@
     }
   }
   .header {
-    margin-bottom: 0;
+    margin-bottom: 0.3rem !important;
     .mb-3 {
-      margin-bottom: 0 !important;
       @extend %caption;
+      margin-bottom: 0 !important;
       padding-top: 0.5em;
     }
     .mr-2 {
