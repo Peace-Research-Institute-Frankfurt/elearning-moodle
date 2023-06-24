@@ -39,5 +39,8 @@
     "socket.io-parser": "^4.2.3",
     "engine.io": "^6.4.2"
   },
-  "packageManager": "yarn@3.4.1"
+  "packageManager": "yarn@3.4.1",
+  "dependencies": {
+    "js-cookie": "^3.0.5"
+  }
 }

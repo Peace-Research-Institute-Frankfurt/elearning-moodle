@@ -1,0 +1,32 @@
+{{!
+  @template tool_policy/guestconsent
+}}
+
+{{#haspolicies}}
+  <aside class="cookies" id="cookies-popup">
+    {{ logo_url }}
+    {{ policies_list }}
+    <p class="cookies__copy">
+      This website requires cookies and related technologies to function normally. You may optionally allow the use of additional cookies for site analytics.
+    </p>
+
+    <div class="cookies__actions">
+      <button id="js-allow-all" class="btn">Allow all cookies</button>
+      <button id="js-allow-necessary" class="btn">Allow necessary cookies only</button>
+    </div>
+
+    <div class="cookies__sub">
+      <span>Our analytics are powered by <a href="https://matomo.org/">Matomo</a>. For more information, please refer to the following policy documents:</span>
+      <ul>
+        {{#policies}}
+          <li>
+            <a href="{{pluginbaseurl}}/view.php?versionid={{id}}{{#returnurl}}&amp;returnurl={{.}}{{/returnurl}}" data-action="view-guest" data-versionid="{{id}}" data-behalfid="1">
+              {{{name}}}
+            </a>
+          </li>
+        {{/policies}}
+      </ul>. We'll remember your decision for 30 days.
+    </div>
+
+  </aside>
+{{/haspolicies}}

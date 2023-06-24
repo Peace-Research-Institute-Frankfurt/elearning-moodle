@@ -2239,6 +2239,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-cookie@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "js-cookie@npm:3.0.5"
+  checksum: 2dbd2809c6180fbcf060c6957cb82dbb47edae0ead6bd71cbeedf448aa6b6923115003b995f7d3e3077bfe2cb76295ea6b584eb7196cca8ba0a09f389f64967a
+  languageName: node
+  linkType: hard
+
 "json-parse-better-errors@npm:^1.0.1":
   version: 1.0.2
   resolution: "json-parse-better-errors@npm:1.0.2"
@@ -3028,6 +3035,7 @@ __metadata:
     autoprefixer: ^10.4.14
     browser-sync: ^2.29.3
     cross-env: ^7.0.3
+    js-cookie: ^3.0.5
     npm-run-all: ^4.1.5
     postcss: ^8.4.24
     postcss-cli: ^10.1.0

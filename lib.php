@@ -30,7 +30,6 @@ function append_additionalhtmlhead()
 	$matomo = '<!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push([\'requireConsent\']);
   _paq.push([\'trackPageView\']);
   _paq.push([\'enableLinkTracking\']);
@@ -375,7 +374,6 @@ if (!function_exists('theme_url')) {
 		return $theme_url;
 	}
 }
-
 
 function theme_hsfk_get_context()
 {

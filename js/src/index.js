@@ -1,3 +1,4 @@
+import initCookiePopup from "./initCookiePopup"
 import initHeroVideo from "./initHeroVideo"
 import initStickyHeader from "./initStickyHeader"
 
@@ -15,4 +16,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
   initStickyHeader()
   initHeroVideo()
+  initCookiePopup()
 })
