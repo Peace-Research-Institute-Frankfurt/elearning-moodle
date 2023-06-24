@@ -7,6 +7,10 @@
   grid-row: 1;
   h2 {
     @extend %h2;
+    margin-bottom: 1.25rem;
+    @include bp(m) {
+      margin-bottom: 1.75rem;
+    }
     color: var(--color-blue-dark);
   }
   .forumpost {
@@ -34,6 +38,7 @@
     display: none !important;
   }
   .post-content-container {
+    @extend %copy;
     & + .d-flex {
       display: none !important;
     }
