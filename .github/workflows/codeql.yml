@@ -5,12 +5,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
 
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       actions: read
       contents: read
@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         language: [ 'javascript' ]
-        
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
-
+      
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
