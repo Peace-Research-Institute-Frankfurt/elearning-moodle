@@ -32,9 +32,8 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.STAGING_FTP_USER }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: ./theme/hsfk/
-          dry-run: true
+          server-dir: theme/hsfk/
+          dry-run: false
           exclude: |
             **/.git*
             **/.git*/**
