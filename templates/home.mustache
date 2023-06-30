@@ -92,7 +92,7 @@
                   <img loading="lazy" src="{{{ image }}}" alt="">
                 </div>
                 <div class="contributors__copy">
-                  <h3>{{{ name }}}</h3>
+                  ` <h3>{{{ name }}}</h3>
                 </div>
               </button>
               <div class="modal fade" id="{{{ id }}}">
@@ -106,17 +106,17 @@
                     </div>
                     <div class="modal-body">
                       <p>{{{ bio }}}</p>
-                      {{#in_courses}}
-                        {{#multiple_courses}}
-                          <h4>Learning Units</h4>
-                        {{/multiple_courses}}
-                        {{^multiple_courses}}
-                          <h4>Learning Unit</h4>
-                        {{/multiple_courses}}
-                      {{/in_courses}}
-                      {{#in_courses}}
-                        {{{ fullname }}}
-                      {{/in_courses}}
+                      {{#multiple_courses}}
+                        <h4>Learning Units</h4>
+                      {{/multiple_courses}}
+                      {{^multiple_courses}}
+                        <h4>Learning Unit</h4>
+                      {{/multiple_courses}}
+                      <ul>
+                        {{#in_courses}}
+                          <li>{{{ fullname }}}</li>
+                        {{/in_courses}}
+                      </ul>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
