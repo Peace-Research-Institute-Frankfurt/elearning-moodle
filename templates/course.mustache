@@ -15,10 +15,13 @@
         {{#headercontent}}
           {{> core/activity_header }}
         {{/headercontent}}
+        {{#secondarymoremenu}}
+          <div class="secondary-navigation course__secondary-menu">
+            {{> core/moremenu}}
+          </div>
+        {{/secondarymoremenu}}
       </header>
-
       <main id="region-bs-main-and-pre">
-
         {{{ output.course_content_header }}}
         {{{ output.main_content }}}
         {{{ output.course_content_footer }}}

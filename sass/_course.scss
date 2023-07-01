@@ -141,3 +141,35 @@
     }
   }
 }
+
+.course__secondary-menu {
+  .moremenu {
+    padding: 0;
+    margin: 0;
+    height: auto !important;
+    margin-top: 1rem;
+    .nav-tabs {
+      background: transparent !important;
+      li {
+        border-right: 1px solid lightgray;
+      }
+    }
+    .nav-link {
+      &.active {
+        border-bottom-color: transparent;
+        font-weight: 900;
+        color: var(--black);
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    padding: 0.5em 1em;
+    padding-bottom: 0.35em;
+    height: auto !important;
+    &:hover,
+    &:focus-visible {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
