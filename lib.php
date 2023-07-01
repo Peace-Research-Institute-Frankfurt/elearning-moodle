@@ -1,33 +1,19 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
-//
-// Moodle is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * @package   theme_hsfk
- * @copyright 2015 Nephzat Dev Team, nephzat.com
+ * @copyright 2023 PRIF
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 function append_additionalhtmlhead()
 {
-	global $CFG;
+  global $CFG;
 
-	$additionalhtmlhead = $CFG->additionalhtmlhead . "\n";
+  $additionalhtmlhead = $CFG->additionalhtmlhead . "\n";
 
-	// Add Matomo Analytics
-	$matomo = '<!-- Matomo -->
+  // Add Matomo Analytics
+  $matomo = '<!-- Matomo -->
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push([\'requireConsent\']);
@@ -43,8 +29,8 @@ function append_additionalhtmlhead()
 </script>
 <!-- End Matomo Code -->' . "\n";
 
-	$additionalhtmlhead .= $matomo;
-	$CFG->additionalhtmlhead = $additionalhtmlhead;
+  $additionalhtmlhead .= $matomo;
+  $CFG->additionalhtmlhead = $additionalhtmlhead;
 }
 
 
@@ -54,7 +40,7 @@ function append_additionalhtmlhead()
  */
 function theme_hsfk_page_init(moodle_page $page)
 {
-	if (!is_siteadmin()) append_additionalhtmlhead();
+  if (!is_siteadmin()) append_additionalhtmlhead();
 }
 
 /**
@@ -69,20 +55,20 @@ function theme_hsfk_page_init(moodle_page $page)
 function theme_hsfk_process_css($css, $theme)
 {
 
-	// Set the background image for the logo.
-	$logo = $theme->setting_file_url('logo', 'logo');
-	$css = theme_hsfk_set_logo($css, $logo);
+  // Set the background image for the logo.
+  $logo = $theme->setting_file_url('logo', 'logo');
+  $css = theme_hsfk_set_logo($css, $logo);
 
-	// Set custom CSS.
-	if (!empty($theme->settings->customcss)) {
-		$customcss = $theme->settings->customcss;
-	} else {
-		$customcss = null;
-	}
-	$css = theme_hsfk_set_customcss($css, $customcss);
-	$css = theme_hsfk_set_fontwww($css);
+  // Set custom CSS.
+  if (!empty($theme->settings->customcss)) {
+    $customcss = $theme->settings->customcss;
+  } else {
+    $customcss = null;
+  }
+  $css = theme_hsfk_set_customcss($css, $customcss);
+  $css = theme_hsfk_set_fontwww($css);
 
-	return $css;
+  return $css;
 }
 
 /**
@@ -94,15 +80,15 @@ function theme_hsfk_process_css($css, $theme)
  */
 function theme_hsfk_set_logo($css, $logo)
 {
-	$tag = '[[setting:logo]]';
-	$replacement = $logo;
-	if (is_null($replacement)) {
-		$replacement = '';
-	}
+  $tag = '[[setting:logo]]';
+  $replacement = $logo;
+  if (is_null($replacement)) {
+    $replacement = '';
+  }
 
-	$css = str_replace($tag, $replacement, $css);
+  $css = str_replace($tag, $replacement, $css);
 
-	return $css;
+  return $css;
 }
 
 /**
@@ -119,28 +105,28 @@ function theme_hsfk_set_logo($css, $logo)
  */
 function theme_hsfk_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
 {
-	static $theme;
+  static $theme;
 
-	if (empty($theme)) {
-		$theme = theme_config::load('hsfk');
-	}
-	if ($context->contextlevel == CONTEXT_SYSTEM) {
-		if ($filearea === 'logo') {
-			return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
-		} else if ($filearea === 'footerlogo') {
-			return $theme->setting_file_serve('footerlogo', $args, $forcedownload, $options);
-		} else if ($filearea === 'style') {
-			theme_hsfk_serve_css($args[1]);
-		} else if ($filearea === 'pagebackground') {
-			return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
-		} else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
-			return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
-		} else {
-			send_file_not_found();
-		}
-	} else {
-		send_file_not_found();
-	}
+  if (empty($theme)) {
+    $theme = theme_config::load('hsfk');
+  }
+  if ($context->contextlevel == CONTEXT_SYSTEM) {
+    if ($filearea === 'logo') {
+      return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+    } else if ($filearea === 'footerlogo') {
+      return $theme->setting_file_serve('footerlogo', $args, $forcedownload, $options);
+    } else if ($filearea === 'style') {
+      theme_hsfk_serve_css($args[1]);
+    } else if ($filearea === 'pagebackground') {
+      return $theme->setting_file_serve('pagebackground', $args, $forcedownload, $options);
+    } else if (preg_match("/slide[1-9][0-9]*image/", $filearea) !== false) {
+      return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+    } else {
+      send_file_not_found();
+    }
+  } else {
+    send_file_not_found();
+  }
 }
 
 /**
@@ -151,39 +137,39 @@ function theme_hsfk_pluginfile($course, $cm, $context, $filearea, $args, $forced
  */
 function theme_hsfk_serve_css($filename)
 {
-	global $CFG;
-	if (!empty($CFG->themedir)) {
-		$thestylepath = $CFG->themedir . '/hsfk/style/';
-	} else {
-		$thestylepath = $CFG->dirroot . '/theme/hsfk/style/';
-	}
-	$thesheet = $thestylepath . $filename;
+  global $CFG;
+  if (!empty($CFG->themedir)) {
+    $thestylepath = $CFG->themedir . '/hsfk/style/';
+  } else {
+    $thestylepath = $CFG->dirroot . '/theme/hsfk/style/';
+  }
+  $thesheet = $thestylepath . $filename;
 
 
-	$etagfile = md5_file($thesheet);
-	$lastmodified = filemtime($thesheet);
-	$ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
-	$etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+  $etagfile = md5_file($thesheet);
+  $lastmodified = filemtime($thesheet);
+  $ifmodifiedsince = (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
+  $etagheader = (isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
 
-	if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince) == $lastmodified)) || $etagheader == $etagfile) {
-		theme_hsfk_send_unmodified($lastmodified, $etagfile);
-	}
-	theme_hsfk_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
+  if ((($ifmodifiedsince) && (strtotime($ifmodifiedsince) == $lastmodified)) || $etagheader == $etagfile) {
+    theme_hsfk_send_unmodified($lastmodified, $etagfile);
+  }
+  theme_hsfk_send_cached_css($thestylepath, $filename, $lastmodified, $etagfile);
 }
 
 // Set browser cache used in php header
 function theme_hsfk_send_unmodified($lastmodified, $etag)
 {
-	$lifetime = 60 * 60 * 24 * 60;
-	header('HTTP/1.1 304 Not Modified');
-	header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
-	header('Cache-Control: public, max-age=' . $lifetime);
-	header('Content-Type: text/css; charset=utf-8');
-	header('Etag: "' . $etag . '"');
-	if ($lastmodified) {
-		header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
-	}
-	die;
+  $lifetime = 60 * 60 * 24 * 60;
+  header('HTTP/1.1 304 Not Modified');
+  header('Expires: ' . gmdate('D, d M Y H:i:s', time() + $lifetime) . ' GMT');
+  header('Cache-Control: public, max-age=' . $lifetime);
+  header('Content-Type: text/css; charset=utf-8');
+  header('Etag: "' . $etag . '"');
+  if ($lastmodified) {
+    header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
+  }
+  die;
 }
 
 // // Cache CSS
@@ -220,15 +206,15 @@ function theme_hsfk_send_unmodified($lastmodified, $etag)
  */
 function theme_hsfk_set_customcss($css, $customcss)
 {
-	$tag = '[[setting:customcss]]';
-	$replacement = $customcss;
-	if (is_null($replacement)) {
-		$replacement = '';
-	}
+  $tag = '[[setting:customcss]]';
+  $replacement = $customcss;
+  if (is_null($replacement)) {
+    $replacement = '';
+  }
 
-	$css = str_replace($tag, $replacement, $css);
+  $css = str_replace($tag, $replacement, $css);
 
-	return $css;
+  return $css;
 }
 
 /**
@@ -246,26 +232,26 @@ function theme_hsfk_set_customcss($css, $customcss)
  */
 function theme_hsfk_get_html_for_settings(renderer_base $output, moodle_page $page)
 {
-	global $CFG;
-	$return = new stdClass;
+  global $CFG;
+  $return = new stdClass;
 
-	$return->navbarclass = '';
-	if (!empty($page->theme->settings->invert)) {
-		$return->navbarclass .= ' navbar-inverse';
-	}
+  $return->navbarclass = '';
+  if (!empty($page->theme->settings->invert)) {
+    $return->navbarclass .= ' navbar-inverse';
+  }
 
-	if (!empty($page->theme->settings->logo)) {
-		$return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
-	} else {
-		$return->heading = $output->page_heading();
-	}
+  if (!empty($page->theme->settings->logo)) {
+    $return->heading = html_writer::link($CFG->wwwroot, '', array('title' => get_string('home'), 'class' => 'logo'));
+  } else {
+    $return->heading = $output->page_heading();
+  }
 
-	$return->footnote = '';
-	if (!empty($page->theme->settings->footnote)) {
-		$return->footnote = '<div class="footnote text-center">' . format_text($page->theme->settings->footnote) . '</div>';
-	}
+  $return->footnote = '';
+  if (!empty($page->theme->settings->footnote)) {
+    $return->footnote = '<div class="footnote text-center">' . format_text($page->theme->settings->footnote) . '</div>';
+  }
 
-	return $return;
+  return $return;
 }
 
 /**
@@ -276,20 +262,20 @@ function theme_hsfk_get_html_for_settings(renderer_base $output, moodle_page $pa
  */
 function theme_hsfk_set_fontwww($css)
 {
-	global $CFG, $PAGE;
-	if (empty($CFG->themewww)) {
-		$themewww = $CFG->wwwroot . "/theme";
-	} else {
-		$themewww = $CFG->themewww;
-	}
+  global $CFG, $PAGE;
+  if (empty($CFG->themewww)) {
+    $themewww = $CFG->wwwroot . "/theme";
+  } else {
+    $themewww = $CFG->themewww;
+  }
 
-	$tag = '[[setting:fontwww]]';
+  $tag = '[[setting:fontwww]]';
 
-	$theme = theme_config::load('hsfk');
+  $theme = theme_config::load('hsfk');
 
-	$css = str_replace($tag, $themewww . '/hsfk/fonts/', $css);
+  $css = str_replace($tag, $themewww . '/hsfk/fonts/', $css);
 
-	return $css;
+  return $css;
 }
 
 /**
@@ -300,65 +286,65 @@ function theme_hsfk_set_fontwww($css)
 
 
 if (!function_exists('get_logo_url')) {
-	function get_logo_url($type = 'header')
-	{
-		global $OUTPUT;
-		static $theme;
-		if (empty($theme)) {
-			$theme = theme_config::load('hsfk');
-		}
+  function get_logo_url($type = 'header')
+  {
+    global $OUTPUT;
+    static $theme;
+    if (empty($theme)) {
+      $theme = theme_config::load('hsfk');
+    }
 
-		if ($type == "header") {
-			$logo = $theme->setting_file_url('logo', 'logo');
-			$logo = empty($logo) ? $OUTPUT->image_url('home/logo', 'theme') : $logo;
-		} else if ($type == "footer") {
-			$logo = $theme->setting_file_url('footerlogo', 'footerlogo');
-			$logo = empty($logo) ? $OUTPUT->icon_url('home/footerlogo', 'theme') : $logo;
-		} else if ($type == "navbar") {
-			$logo = $theme->setting_file_url('navbarlogo', 'navbarlogo');
-			$logo = empty($logo) ? $OUTPUT->image_url('home/navbarlogo', 'theme') : $logo;
-		}
+    if ($type == "header") {
+      $logo = $theme->setting_file_url('logo', 'logo');
+      $logo = empty($logo) ? $OUTPUT->image_url('home/logo', 'theme') : $logo;
+    } else if ($type == "footer") {
+      $logo = $theme->setting_file_url('footerlogo', 'footerlogo');
+      $logo = empty($logo) ? $OUTPUT->icon_url('home/footerlogo', 'theme') : $logo;
+    } else if ($type == "navbar") {
+      $logo = $theme->setting_file_url('navbarlogo', 'navbarlogo');
+      $logo = empty($logo) ? $OUTPUT->image_url('home/navbarlogo', 'theme') : $logo;
+    }
 
-		return $logo;
-	}
+    return $logo;
+  }
 }
 
 
 function theme_hsfk_render_slideimg($p, $sliname)
 {
-	global $PAGE, $OUTPUT;
+  global $PAGE, $OUTPUT;
 
-	$i = $p % 3;
-	$slideimage = $OUTPUT->image_url('home/slide' . $i, 'theme');
+  $i = $p % 3;
+  $slideimage = $OUTPUT->image_url('home/slide' . $i, 'theme');
 
-	// Get slide image or fallback to default
-	if (theme_hsfk_get_setting($sliname)) {
-		$slideimage = $PAGE->theme->setting_file_url($sliname, $sliname);
-	}
+  // Get slide image or fallback to default
+  if (theme_hsfk_get_setting($sliname)) {
+    $slideimage = $PAGE->theme->setting_file_url($sliname, $sliname);
+  }
 
-	return $slideimage;
+  return $slideimage;
 }
 
 
 function theme_hsfk_get_setting($setting, $format = false)
 {
-	global $CFG;
-	require_once($CFG->dirroot . '/lib/weblib.php');
-	static $theme;
-	if (empty($theme)) {
-		$theme = theme_config::load('hsfk');
-	}
-	if (empty($theme->settings->$setting)) {
-		return false;
-	} else if (!$format) {
-		return $theme->settings->$setting;
-	} else if ($format === 'format_text') {
-		return format_text($theme->settings->$setting, FORMAT_PLAIN);
-	} else if ($format === 'format_html') {
-		return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
-	} else {
-		return format_string($theme->settings->$setting);
-	}
+  global $CFG;
+  require_once($CFG->dirroot . '/lib/weblib.php');
+  static $theme;
+  if (empty($theme)) {
+    $theme = theme_config::load('hsfk');
+  }
+  if (empty($theme->settings->$setting)) {
+    return false;
+  } else if (!$format) {
+    return $theme->settings->$setting;
+  } else if ($format === 'format_text') {
+    return format_text($theme->settings->$setting, FORMAT_PLAIN);
+  } else if ($format === 'format_html') {
+    return format_text($theme->settings->$setting, FORMAT_HTML, array('trusted' => true, 'noclean' => true));
+  } else {
+    return format_string($theme->settings->$setting);
+  }
 }
 
 /**
@@ -367,114 +353,114 @@ function theme_hsfk_get_setting($setting, $format = false)
  * @return string
  */
 if (!function_exists('theme_url')) {
-	function theme_url()
-	{
-		global $CFG, $PAGE;
-		$theme_url =	$CFG->wwwroot . '/theme/' . $PAGE->theme->name;
-		return $theme_url;
-	}
+  function theme_url()
+  {
+    global $CFG, $PAGE;
+    $theme_url =  $CFG->wwwroot . '/theme/' . $PAGE->theme->name;
+    return $theme_url;
+  }
 }
 
 function theme_hsfk_get_context()
 {
-	global $CFG, $USER, $OUTPUT, $PAGE, $SITE;
+  global $CFG, $USER, $OUTPUT, $PAGE, $SITE;
 
-	$renderer = $PAGE->get_renderer('core', 'course');
-	$primary = new core\navigation\output\primary($PAGE);
-	$primary_menu = $primary->export_for_template($renderer);
+  $renderer = $PAGE->get_renderer('core', 'course');
+  $primary = new core\navigation\output\primary($PAGE);
+  $primary_menu = $primary->export_for_template($renderer);
 
-	$header = $PAGE->activityheader;
-	$header_content = $header->export_for_template($renderer);
-	$side_pre_blocks = $OUTPUT->blocks('side-pre');
-	$settings_menu = $OUTPUT->region_main_settings_menu();
+  $header = $PAGE->activityheader;
+  $header_content = $header->export_for_template($renderer);
+  $side_pre_blocks = $OUTPUT->blocks('side-pre');
+  $settings_menu = $OUTPUT->region_main_settings_menu();
 
-	$context = array(
-		'is_site_admin' => is_siteadmin(),
-		"is_logged_in" => isloggedin(),
-		"user" => $USER,
-		"custom_menu" => $OUTPUT->custom_menu(),
-		"logo_url" => get_logo_url(),
-		"logo_nav_url" => get_logo_url("navbar"),
-		"search_action" => new moodle_url('/course/search.php'),
-		"theme_settings" => array(
-			'copyright' => theme_hsfk_get_setting('copyright_footer'),
-			'address' => theme_hsfk_get_setting('address'),
-			'email' => theme_hsfk_get_setting('emailid'),
-		),
-		"year" => date("Y"),
-		"output" => $OUTPUT,
-		"site_name" => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
-		"primarymoremenu" => $primary_menu['moremenu'],
-		'usermenu' => $primary_menu['user'],
-		"config" => $CFG,
-		"headercontent" => $header_content,
-		"side_pre_blocks" => $side_pre_blocks,
-		"settings_menu" => $settings_menu,
-	);
+  $context = array(
+    'is_site_admin' => is_siteadmin(),
+    "is_logged_in" => isloggedin(),
+    "user" => $USER,
+    "custom_menu" => $OUTPUT->custom_menu(),
+    "logo_url" => get_logo_url(),
+    "logo_nav_url" => get_logo_url("navbar"),
+    "search_action" => new moodle_url('/course/search.php'),
+    "theme_settings" => array(
+      'copyright' => theme_hsfk_get_setting('copyright_footer'),
+      'address' => theme_hsfk_get_setting('address'),
+      'email' => theme_hsfk_get_setting('emailid'),
+    ),
+    "year" => date("Y"),
+    "output" => $OUTPUT,
+    "site_name" => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    "primarymoremenu" => $primary_menu['moremenu'],
+    'usermenu' => $primary_menu['user'],
+    "config" => $CFG,
+    "headercontent" => $header_content,
+    "side_pre_blocks" => $side_pre_blocks,
+    "settings_menu" => $settings_menu,
+  );
 
-	return $context;
+  return $context;
 }
 
 
 function theme_hsfk_get_contributors()
 {
-	$contributors = array();
-	$course_helper = new coursecat_helper();
-	$course_helper->set_show_courses(core_course_renderer::COURSECAT_SHOW_COURSES_EXPANDED)->set_courses_display_options(array(
-		'recursive' => true,
-	));
+  $contributors = array();
+  $course_helper = new coursecat_helper();
+  $course_helper->set_show_courses(core_course_renderer::COURSECAT_SHOW_COURSES_EXPANDED)->set_courses_display_options(array(
+    'recursive' => true,
+  ));
 
-	$course_ids = array_keys(core_course_category::get(0)->get_courses($course_helper->get_courses_display_options()));
-	$courses = array();
+  $course_ids = array_keys(core_course_category::get(0)->get_courses($course_helper->get_courses_display_options()));
+  $courses = array();
 
-	foreach ($course_ids as $course_id) {
-		$course = get_course($course_id);
-		$custom_fields = theme_hsfk_get_custom_fields($course_id);
-		$authors = array();
-		if (isset($custom_fields["lu_authors"])) {
-			$authors = explode(";", $custom_fields["lu_authors"]);
-		}
-		$courses[] = array(
-			"course" => $course,
-			"authors" => $authors
-		);
-	}
+  foreach ($course_ids as $course_id) {
+    $course = get_course($course_id);
+    $custom_fields = theme_hsfk_get_custom_fields($course_id);
+    $authors = array();
+    if (isset($custom_fields["lu_authors"])) {
+      $authors = explode(";", $custom_fields["lu_authors"]);
+    }
+    $courses[] = array(
+      "course" => $course,
+      "authors" => $authors
+    );
+  }
 
-	for ($i = 1; $i <= get_config("theme_hsfk", "contributor_count"); $i++) {
+  for ($i = 1; $i <= get_config("theme_hsfk", "contributor_count"); $i++) {
 
-		$contributor = array(
-			"name" => theme_hsfk_get_setting('slide' . $i . 'title'),
-			"bio" => theme_hsfk_get_setting('slide' . $i . 'caption', true),
-			"image" => theme_hsfk_render_slideimg($i, 'slide' . $i . 'image'),
-			"in_courses" => array(),
-			"id" => "contributor-" . $i
-		);
+    $contributor = array(
+      "name" => theme_hsfk_get_setting('slide' . $i . 'title'),
+      "bio" => theme_hsfk_get_setting('slide' . $i . 'caption', true),
+      "image" => theme_hsfk_render_slideimg($i, 'slide' . $i . 'image'),
+      "in_courses" => array(),
+      "id" => "contributor-" . $i
+    );
 
-		foreach ($courses as $course) {
-			if (array_search($contributor["name"], $course["authors"]) !== false) {
-				$contributor["in_courses"][] = $course["course"];
-			}
-		}
+    foreach ($courses as $course) {
+      if (array_search($contributor["name"], $course["authors"]) !== false) {
+        $contributor["in_courses"][] = $course["course"];
+      }
+    }
 
-		$contributor["multiple_courses"] = (count($contributor["in_courses"]) > 1);
+    $contributor["multiple_courses"] = (count($contributor["in_courses"]) > 1);
 
-		if (isset($contributor["name"])) {
-			$contributors[] = $contributor;
-		}
-	}
-	return $contributors;
+    if (isset($contributor["name"])) {
+      $contributors[] = $contributor;
+    }
+  }
+  return $contributors;
 }
 
 function theme_hsfk_get_custom_fields($courseid)
 {
-	$handler = \core_customfield\handler::get_handler('core_course', 'course');
-	$datas = $handler->get_instance_data($courseid);
-	$metadata = [];
-	foreach ($datas as $data) {
-		if (empty($data->get_value())) {
-			continue;
-		}
-		$metadata[$data->get_field()->get('shortname')] = $data->get_value();
-	}
-	return $metadata;
+  $handler = \core_customfield\handler::get_handler('core_course', 'course');
+  $datas = $handler->get_instance_data($courseid);
+  $metadata = [];
+  foreach ($datas as $data) {
+    if (empty($data->get_value())) {
+      continue;
+    }
+    $metadata[$data->get_field()->get('shortname')] = $data->get_value();
+  }
+  return $metadata;
 }
