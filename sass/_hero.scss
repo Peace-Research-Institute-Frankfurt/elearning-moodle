@@ -148,7 +148,11 @@
   mask-image: linear-gradient(to top, transparent -30%, rgba(black, 0.3) 100%);
   @include bp(m) {
     filter: grayscale(1) contrast(2) blur(0);
-    mask-image: linear-gradient(to right, transparent 20%, rgba(black, 0.5) 100%);
+    mask-image: linear-gradient(
+      to right,
+      transparent 20%,
+      rgba(black, 0.5) 100%
+    );
   }
 }
 
