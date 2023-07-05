@@ -58,7 +58,9 @@
   --fast: 140ms;
   --br: 4px;
   --padding: 1.5rem;
+  font-size: 0.85rem;
   @include bp(m) {
+    font-size: 1rem;
     --ms-1: 1.3rem;
     --ms-2: 2.25rem;
     --ms-3: 2.75rem;

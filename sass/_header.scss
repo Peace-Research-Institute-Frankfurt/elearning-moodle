@@ -243,8 +243,12 @@ ul.pull-right {
 
 .navbar-toggler {
   color: white;
-  background: rgba(white, 0.1);
+  background: rgba(black, 0.2);
   border-radius: 0;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  height: 40px;
   span {
     display: none;
   }
