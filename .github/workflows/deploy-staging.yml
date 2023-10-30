@@ -1,8 +1,6 @@
 name: "Deploy to staging"
 
 on:
-  pull_request:
-    branches: ["main"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,7 +28,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.STAGING_FTP_USER }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
-          server-dir: theme/hsfk/
+          server-dir: /staging.nonproliferation-elearning.eu/theme/hsfk/
           dry-run: false
           exclude: |
             **/.git*
