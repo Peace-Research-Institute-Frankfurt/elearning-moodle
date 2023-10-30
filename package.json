@@ -33,7 +33,7 @@
     "postcss-cli": "^10.1.0",
     "sass": "^1.69.5",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.3"
+    "webpack-cli": "^5.1.4"
   },
   "resolutions": {
     "socket.io-parser": "^4.2.3",
