@@ -5,10 +5,10 @@ title: Upgrade Moodle to [VERSION]
 labels: dependencies
 assignees: awesomephant
 body:
-- type: input
-  id: target_version
-  attributes:
-    label: Target Version
+  - type: input
+    id: target_version
+    attributes:
+      label: Target Version
 
 ---
 
@@ -19,6 +19,7 @@ body:
   - [x] Upload the new version of Moodle to it
   - [ ] Backup the staging DB
   - [ ] Copy `config.php` to the new folder
+  - [ ] Copy `.user.ini`
   - [ ] Copy the theme: `theme/hsfk`
   - [ ] Copy the plugins: `mod/customcert`, `enrol/auto`
   - [ ] Rename the original folder to `staging.nonproliferation-elearning.eu-old` and the new one to `staging.nonproliferation-elearning.eu`
