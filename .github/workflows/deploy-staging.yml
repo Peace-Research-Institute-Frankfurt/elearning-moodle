@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.STAGING_FTP_USER }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
           server-dir: /staging.nonproliferation-elearning.eu/theme/hsfk/
-          dry-run: false
+          dry-run: true
           exclude: |
             **/.git*
             **/.git*/**
