@@ -4,6 +4,11 @@ about: Standard workflow for upgrading Moodle
 title: Upgrade Moodle to [VERSION]
 labels: dependencies
 assignees: awesomephant
+body:
+- type: input
+  id: target_version
+  attributes:
+    label: Target Version
 
 ---
 
@@ -14,7 +19,7 @@ assignees: awesomephant
   - [x] Upload the new version of Moodle to it
   - [ ] Backup the staging DB
   - [ ] Copy `config.php` to the new folder
-  - [ ] Copy the `hsfk` theme to the new folder
-  - [ ] Copy the plugins: `mod_customcert`, `enrol_autoenrol`
+  - [ ] Copy the theme: `theme/hsfk`
+  - [ ] Copy the plugins: `mod/customcert`, `enrol/auto`
   - [ ] Rename the original folder to `staging.nonproliferation-elearning.eu-old` and the new one to `staging.nonproliferation-elearning.eu`
   - [ ] Open the staging site and complete the upgrade process
