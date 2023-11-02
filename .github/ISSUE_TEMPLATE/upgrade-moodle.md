@@ -18,7 +18,7 @@ assignees: awesomephant
   - [ ] Copy the plugins: `mod/customcert`, `mod/certificate`, `enrol/auto`
   - [ ] Rename the original folder to `staging.nonproliferation-elearning.eu-old` and the new one to `staging.nonproliferation-elearning.eu`
   - [ ] Open [staging.nonproliferation-elearning.eu](https://staging.nonproliferation-elearning.eu) and complete the upgrade process
-- [ ] Update staging
+- [ ] Update production
   - [x] Make a new folder called `nonproliferation-elearning.eu-update`
   - [x] Upload the new version of Moodle to it
   - [ ] Backup the staging DB
