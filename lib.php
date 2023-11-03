@@ -443,7 +443,8 @@ function theme_hsfk_get_contributors()
       }
     }
 
-    $contributor["multiple_courses"] = (count($contributor["in_courses"]) > 1);
+    $contributor["has_courses"] = count($contributor["in_courses"]);
+    $contributor["has_multiple_courses"] = (count($contributor["in_courses"]) > 1);
 
     if (isset($contributor["name"])) {
       $contributors[] = $contributor;

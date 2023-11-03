@@ -106,17 +106,19 @@
                     </div>
                     <div class="modal-body">
                       <p>{{{ bio }}}</p>
-                      {{#multiple_courses}}
+                      {{#has_courses}}
+                      {{#has_multiple_courses}}
                         <h4>Learning Units</h4>
-                      {{/multiple_courses}}
-                      {{^multiple_courses}}
+                      {{/has_multiple_courses}}
+                      {{^has_multiple_courses}}
                         <h4>Learning Unit</h4>
-                      {{/multiple_courses}}
+                      {{/has_multiple_courses}}
                       <ul>
                         {{#in_courses}}
                           <li>{{{ fullname }}}</li>
                         {{/in_courses}}
                       </ul>
+                      {{/has_courses}}
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
