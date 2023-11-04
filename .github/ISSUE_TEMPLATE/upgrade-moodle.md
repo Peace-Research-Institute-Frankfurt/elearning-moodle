@@ -26,5 +26,6 @@ assignees: awesomephant
   - [ ] Copy `.user.ini`
   - [ ] Copy the theme: `theme/hsfk`
   - [ ] Copy the plugins: `mod/customcert`, `mod/certificate`, `enrol/auto`
+  - [ ] Copy `/learningunit`!
   - [ ] Rename the original folder to `nonproliferation-elearning.eu-old` and the new one to `nonproliferation-elearning.eu`
   - [ ] Open [nonproliferation-elearning.eu](https://nonproliferation-elearning.eu) and complete the upgrade process
