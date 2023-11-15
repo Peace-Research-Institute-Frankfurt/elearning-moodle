@@ -16,7 +16,7 @@
           <iframe src="https://start.video-stream-hosting.de/player.html?serverapp=hsfk2-vod&streamname=trailer.smil&nocookie=1&bgimage={{{ hero_image }}}" width="100%" height="100%" referrerpolicy="strict-origin" allowfullscreen="allowfullscreen"></iframe>
           <button class="hero__video__close" id="hero-video-close">
             Close
-            <i class="fa fa-times fa-3x" aria-hidden="true"></i>
+            <i class="fa-solid fa-times fa-3x" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -36,7 +36,7 @@
 
           <div class="hero__video-teaser">
             <button class="btn btn-primary" id="hero-video-show">
-              <i class="fa fa-play" aria-hidden="true"></i>Watch the trailer
+              <i class="fa-solid fa-play" aria-hidden="true"></i>Watch the trailer
             </button>
           </div>
 
@@ -101,23 +101,23 @@
                     <div class="modal-header">
                       <h3 class="modal-title">{{{ name }}}</h3>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i class="fa fa-times fa-1x" aria-hidden="true"></i>
+                        <i class="fa-solid fa-times fa-1x" aria-hidden="true"></i>
                       </button>
                     </div>
                     <div class="modal-body">
                       <p>{{{ bio }}}</p>
                       {{#has_courses}}
-                      {{#has_multiple_courses}}
-                        <h4>Learning Units</h4>
-                      {{/has_multiple_courses}}
-                      {{^has_multiple_courses}}
-                        <h4>Learning Unit</h4>
-                      {{/has_multiple_courses}}
-                      <ul>
-                        {{#in_courses}}
-                          <li>{{{ fullname }}}</li>
-                        {{/in_courses}}
-                      </ul>
+                        {{#has_multiple_courses}}
+                          <h4>Learning Units</h4>
+                        {{/has_multiple_courses}}
+                        {{^has_multiple_courses}}
+                          <h4>Learning Unit</h4>
+                        {{/has_multiple_courses}}
+                        <ul>
+                          {{#in_courses}}
+                            <li>{{{ fullname }}}</li>
+                          {{/in_courses}}
+                        </ul>
                       {{/has_courses}}
                     </div>
                     <div class="modal-footer">
