@@ -21,9 +21,10 @@ assignees: awesomephant
 - [ ] Update production
   - [ ] Make a new folder called `nonproliferation-elearning.eu-update`
   - [ ] Upload the new version of Moodle to it
-  - [ ] Backup the staging DB
+  - [ ] Backup the production DB
   - [ ] Copy `config.php` to the new folder
   - [ ] Copy `.user.ini`
+  - [ ] Copy `.htaccess`
   - [ ] Copy the theme: `theme/hsfk`
   - [ ] Copy the plugins: `mod/customcert`, `mod/certificate`, `enrol/auto`
   - [ ] Copy `/learningunit`!
