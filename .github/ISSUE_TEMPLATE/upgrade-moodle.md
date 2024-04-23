@@ -6,7 +6,7 @@ labels: dependencies
 assignees: awesomephant
 ---
 
-- [ ] Ensure we're meeting the new version's software requirements (Should be fine for `4.3.x`)
+- [ ] Ensure we're [meeting the new version's software requirements](https://nonproliferation-elearning.eu/admin/environment.php)
 - [ ] Download the required version of Moodle from https://download.moodle.org/releases/latest/
 - [ ] Update staging (use staging files and database: `moodle-staging`)
   - [ ] Backup the staging DB (`all-inkl.com` >`login` > `Database` > `Login` (little computer icon next to the right DB) -> `Export` -> `Custom (gZIP)` -> `Go`)
