@@ -16,7 +16,9 @@ assignees: awesomephant
   - [ ] Copy `.user.ini`
   - [ ] Copy `graphs/`
   - [ ] Copy the theme: `theme/hsfk/`
-  - [ ] Copy the plugins: `mod/customcert`, `enrol/auto/`
+  - [ ] Copy the plugins
+    - [ ] `mod/customcert`
+    - [ ] `enrol/auto/`
   - [ ] Rename the original folder to `staging.nonproliferation-elearning.eu-old` and the new one to `staging.nonproliferation-elearning.eu`
   - [ ] Open [staging.nonproliferation-elearning.eu](https://staging.nonproliferation-elearning.eu) and complete the upgrade process
 - [ ] Update production (use production files and database)
@@ -30,6 +32,6 @@ assignees: awesomephant
   - [ ] Copy the theme: `theme/hsfk/` (put `hsfk` into correct file on new server: `theme`)
   - [ ] Copy the plugin: `mod/customcert/` (s.a. put into correct file on new server)
   - [ ] Copy the plugins: `enrol/auto/` (s.a. put into correct file on new server)
-  - [ ] Copy `/learningunit` ( ! )
+  - [ ] Copy `/learningunits` ( ! )
   - [ ] Rename the original folder to `nonproliferation-elearning.eu-old` and the new one to `nonproliferation-elearning.eu`
   - [ ] Open [nonproliferation-elearning.eu](https://nonproliferation-elearning.eu) and complete the upgrade process
