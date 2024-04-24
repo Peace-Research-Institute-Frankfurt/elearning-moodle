@@ -30,8 +30,9 @@ assignees: awesomephant
   - [ ] Copy `.htaccess` ( ! )
   - [ ] Copy `graphs/`
   - [ ] Copy the theme: `theme/hsfk/` (put `hsfk` into correct file on new server: `theme`)
-  - [ ] Copy the plugin: `mod/customcert/` (s.a. put into correct file on new server)
-  - [ ] Copy the plugins: `enrol/auto/` (s.a. put into correct file on new server)
+  - [ ] Copy the plugins:
+    - [ ] `mod/customcert/` (s.a. put into correct file on new server)
+    - [ ] `enrol/auto/` (s.a. put into correct file on new server)
   - [ ] Copy `/learningunits` ( ! )
   - [ ] Rename the original folder to `nonproliferation-elearning.eu-old` and the new one to `nonproliferation-elearning.eu`
   - [ ] Open [nonproliferation-elearning.eu](https://nonproliferation-elearning.eu) and complete the upgrade process
