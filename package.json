@@ -42,7 +42,7 @@
   },
   "packageManager": "yarn@3.4.1",
   "dependencies": {
-    "cssnano": "^7.0.2",
+    "cssnano": "^7.0.3",
     "js-cookie": "^3.0.5"
   }
 }
