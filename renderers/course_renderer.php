@@ -57,7 +57,9 @@ class theme_hsfk_core_course_renderer extends core_course_renderer
 
 			// Split the course name into LU index and title, ie. ["LU 01", "Arms control basics"]
 			$title_exploded = explode(": ", $course->fullname);
-			$authors = array();
+			
+      // Construct authors array
+      $authors = array();
 			$contributors = theme_hsfk_get_contributors();
 
 			foreach ($contributors as $c) {
