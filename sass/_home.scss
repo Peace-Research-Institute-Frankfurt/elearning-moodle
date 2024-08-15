@@ -8,10 +8,10 @@
   h2 {
     @extend %h2;
     margin-bottom: 1.25rem;
+    color: var(--color-blue-dark);
     @include bp(m) {
       margin-bottom: 1.75rem;
     }
-    color: var(--color-blue-dark);
   }
   .forumpost {
     @extend %card;
