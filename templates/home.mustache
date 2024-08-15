@@ -86,27 +86,27 @@
         <h2 class="section__title">Contributors</h2>
         <ul class="contributors">
           {{#contributors}}
-            <li class="contributors__item">
-              <button class="contributors__card" data-toggle="modal" data-target="#{{{ id }}}">
-                <div class="contributors__image">
-                  <img loading="lazy" src="{{{ image }}}" alt="">
-                </div>
-                <div class="contributors__copy">
-                  <h3>{{{ name }}}</h3>
-                </div>
-              </button>
-              <div class="modal fade" id="{{{ id }}}">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h3 class="modal-title">{{{ name }}}</h3>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i class="fa-solid fa-times fa-1x" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <p>{{{ bio }}}</p>
-                      {{#has_courses}}
+            {{#has_courses}}
+              <li class="contributors__item">
+                <button class="contributors__card" data-toggle="modal" data-target="#{{{ id }}}">
+                  <div class="contributors__image">
+                    <img loading="lazy" src="{{{ image }}}" alt="">
+                  </div>
+                  <div class="contributors__copy">
+                    <h3>{{{ name }}}</h3>
+                  </div>
+                </button>
+                <div class="modal fade" id="{{{ id }}}">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title">{{{ name }}}</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <i class="fa-solid fa-times fa-1x" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>{{{ bio }}}</p>
                         {{#has_multiple_courses}}
                           <h4>Learning Units</h4>
                         {{/has_multiple_courses}}
@@ -118,15 +118,15 @@
                             <li>{{{ fullname }}}</li>
                           {{/in_courses}}
                         </ul>
-                      {{/has_courses}}
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            {{/has_courses}}
           {{/contributors}}
         </ul>
       </section>
