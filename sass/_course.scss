@@ -22,7 +22,9 @@
   }
 
   .activityiconcontainer.assessment {
-    background-color: #393f4b;
+    img {
+      filter: none !important;
+    }
   }
 
   .btn-primary {
